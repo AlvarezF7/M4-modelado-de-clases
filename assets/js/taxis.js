@@ -34,11 +34,12 @@ class TaxiCargo extends TaxiParticular{
         this.pesoCarga= pesoCarga;
     }
  show(){
-  return`Tu taxi es 
-   Modelo: ${this.modelo},Color: ${this.color}, Patente: ${this.patente},
+  
+  return`Tu taxi es Modelo: ${this.modelo}, Color: ${this.color}, Patente: ${this.patente},
    Categoria: ${this.categoria}, Tipo de Carga: ${this.tipoDeCarga}, Peso: ${this.pesoCarga}`
+   
  }
-    
+   
 }
 
 //instanciar  los taxis
@@ -47,10 +48,10 @@ class TaxiCargo extends TaxiParticular{
  const taxiPremium = new TaxiParticular("SUV", "gris",6,"ZOOP52", "Licencia B", "Premium");
  const taxiCargo = new TaxiCargo("Camioneta","blanca","AOID32","Carga","Encomienda","5Kg");
 
-taxiNormal.show();
+/*taxiNormal.show();
 taxiExpress.show();
 taxiPremium.show();
-taxiCargo.show();
+taxiCargo.show();*/
 
 const mostrarTaxi = document.getElementById("mostrarTaxi");
 const categoriaSelect = document.getElementById("categoriaTaxi");
@@ -78,3 +79,4 @@ mostrarTaxi.addEventListener("click", () => {
   // muestra en pantalla el show
   detallet.innerHTML = `<p>${taxiElegido.show()}</p>`;
 });
+ console.log(taxiNormal.show());
