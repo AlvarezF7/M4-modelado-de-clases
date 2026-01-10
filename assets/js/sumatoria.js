@@ -1,15 +1,30 @@
-/*
-Clase Sumatoria
-
-Define la clase Sumatoria, cuyo constructor reciba un número base.
-
-Implementa el método sumar() que calcule y muestre la sumatoria acumulada, avanzando progresivamente con cada ejecución.
-
-Implementa una página con un botón para ejecutar el método sumar() desde un objeto de la clase Sumatoria.
-
-El objeto debe ser creado con un número base aleatorio entre 1 y 10.
-
-La primera línea de salida debe ser generada por el constructor, y las siguientes por el método sumar().
 
 
-*/
+/* ESTA ENLAZADO AL TAXI.HTML*/
+class Sumatoria {
+  constructor(base) {
+    this.base = base;
+    this.incremento = 1;
+    this.total = base;
+
+     this.spanBase = document.querySelector(".base");
+      this.spanBase.textContent = this.total;
+    console.log(`Constructor Base: ${this.base} = Total inicial ${this.total}`);
+  }
+
+  sumar() {
+   
+    this.total += this.incremento;
+    console.log(`Sumatoria: ${this.total - this.incremento} + ${this.incremento} = ${this.total}`);
+
+    this.incremento++;
+    this.spanBase.textContent = this.total;
+     
+  }
+}
+const baseAleatoria = Math.floor(Math.random() * 10) + 1;
+const sumatoria = new Sumatoria(baseAleatoria);
+
+const btnSuma = document.querySelector("#suma");
+    btnSuma.addEventListener('click', ()=> sumatoria.sumar());
+    console.log(sumatoria);
